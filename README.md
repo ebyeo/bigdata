@@ -92,22 +92,25 @@ The following instruction is based on this link https://topnetworkguide.com/inst
 ### Configure Virtual Machine
 The following instruction is based on these links https://www.tecmint.com/network-between-guest-vm-and-host-virtualbox/ and https://unix.stackexchange.com/questions/145997/trying-to-ssh-to-local-vm-ubuntu-with-putty to enable communication between the host and the virtual machines. This is required to be able to launch Zeppelin from the host machine. No static IP is configured as we are not certain if it will work between home and ISS network.
 1. Install [Putty](https://www.putty.org/) on the host PC so that you can have multiple SSH sessions into the guest VM. 
-1. Configure the network interface in the guest VM
-   1. Launch and log in into Ubuntu
-   1. Edit /etc/network/interfaces
+2. Configure the network interface in the guest VM
+   a. Launch and log in into Ubuntu
+   b. Edit /etc/network/interfaces
 ```
-      sudo vi /etc/network/interfaces
+sudo vi /etc/network/interfaces
 ```
-      Append the following entries:
+
+Append the following entries:
+
+
 ```
-      auto enp0s3
-      iface enp0s3 inet dhcp
+auto enp0s3
+iface enp0s3 inet dhcp
 ```
-   1. Restart the network interfaces 
+   c. Restart the network interfaces 
 ```
       sudo systemctl restart networking
 ```
-1. Install the ssh server in the guest VM
+3. Install the ssh server in the guest VM
 ```
 sudo apt-get install openssh-server
 ```
@@ -118,30 +121,30 @@ The following instruction is based on this link https://www.digitalocean.com/com
 ```
 sudo apt-get update
 ```
-1. Install the Java Runtime Environment (JDK)
+2. Install the Java Runtime Environment (JDK)
 ```
 sudo apt-get install default-jdk
 ```
-1. Setting the JAVA_HOME Environment Variable
-   1. To set this environment variable, we will first need to find out where Java is installed. You can do this by executing the same command as in the previous section:
+3. Setting the JAVA_HOME Environment Variable
+   a. To set this environment variable, we will first need to find out where Java is installed. You can do this by executing the same command as in the previous section:
 ```
-      sudo update-alternatives --config java
+sudo update-alternatives --config java
 ```
-   1. Copy the path and then open /etc/environment
+   b. Copy the path and then open /etc/environment
 ```
-      sudo vi /etc/environment
+sudo vi /etc/environment
 ```
-   1. At the end of this file, add the following line, making sure to replace the highlighted path with your own copied path.
+   c. At the end of this file, add the following line, making sure to replace the highlighted path with your own copied path.
 ```
-      JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
+JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 ```
-   1. Save and exit the file and reload it.
+   d. Save and exit the file and reload it.
 ```
-      source /etc/environment
+source /etc/environment
 ```
-   1. You can now test whether the environment variable has been set by executing the following command:
+   e. You can now test whether the environment variable has been set by executing the following command:
 ```
-      echo $JAVA_HOME
+echo $JAVA_HOME
 ```
 
 ### Hadoop, Yarn, HDFS
@@ -159,12 +162,12 @@ mkdir downloads
 cd downloads
 wget http://archive.apache.org/dist/hadoop/common/hadoop-2.7.5/hadoop-2.7.5.tar.gz
 ```
-1. Untar the file and move the extracted files to /opt/hadoop
+2. Untar the file and move the extracted files to /opt/hadoop
 ```
 tar -xzvf hadoop-2.7.5.tar.gz
 sudo mv hadoop-2.7.5 /opt/hadoop
 ```
-1. Set Hadoop environment variables by appending the following commands to ~/.bashrc file.
+3. Set Hadoop environment variables by appending the following commands to ~/.bashrc file.
 ```
 export HADOOP_HOME=/opt/hadoop 
 export HADOOP_MAPRED_HOME=$HADOOP_HOME 
@@ -179,8 +182,8 @@ Now apply all the changes into the current running system.
 ```
 source ~/.bashrc
 ```
-1. Configure Hadoop configuration files in the /opt/hadoop/etc/hadoop. 
-   1. core-site.xml
+4. Configure Hadoop configuration files in the /opt/hadoop/etc/hadoop. 
+   a. core-site.xml
 The core-site.xml file contains information such as the port number used for Hadoop instance, memory allocated for the file system, memory limit for storing the data, and size of Read/Write buffers. Open the core-site.xml and add the following properties in between <configuration>, </configuration> tags.
 ```
    <property>
@@ -188,7 +191,7 @@ The core-site.xml file contains information such as the port number used for Had
       <value>hdfs://localhost:9000</value> 
    </property>
 ```
-   1. hdfs-site.xml
+   b. hdfs-site.xml
 The hdfs-site.xml file contains information such as the value of replication data, namenode path, and datanode paths of your local file systems. It means the place where you want to store the Hadoop infrastructure. Open this file and add the following properties in between the <configuration> </configuration> tags in this file.
 ```
    <property>
@@ -206,7 +209,7 @@ The hdfs-site.xml file contains information such as the value of replication dat
       <value>file:///home/bigdata/hadoopinfra/hdfs/datanode </value> 
    </property>
 ```       
-   1. yarn-site.xml
+   c. yarn-site.xml
 This file is used to configure yarn into Hadoop. Open the yarn-site.xml file and add the following properties in between the <configuration>, </configuration> tags in this file.
 ```
    <property>
@@ -214,7 +217,7 @@ This file is used to configure yarn into Hadoop. Open the yarn-site.xml file and
       <value>mapreduce_shuffle</value> 
    </property>
 ```  
-   1. mapred-site.xml
+   d. mapred-site.xml
 This file is used to specify which MapReduce framework we are using. By default, Hadoop contains a template of yarn-site.xml. First of all, it is required to copy the file from mapred-site.xml.template to mapred-site.xml file using the following command.
 ```
 cp mapred-site.xml.template mapred-site.xml
@@ -226,17 +229,17 @@ Open mapred-site.xml file and add the following properties in between the <confi
       <value>yarn</value>
    </property>
 ```   
-1. Set up namenode
+5. Set up namenode
 ```
 cd ~ 
 hdfs namenode -format
 ```
-1. Verify Hadoop dfs and yarn script
+6. Verify Hadoop dfs and yarn script
 ```
 start-dfs.sh
 start-yarn.sh
 ```
-1. Check that the processes are started successfully:
+7. Check that the processes are started successfully:
 ```
 bigdata@ubuntu:~$ jps
 6707 Jps
@@ -246,17 +249,17 @@ bigdata@ubuntu:~$ jps
 6428 NodeManager
 5966 DataNode
 ```
-1. Accessing Hadoop on browser on the host machine
+8. Accessing Hadoop on browser on the host machine
 The default port number to access Hadoop is 50070. Use the following url to get Hadoop services on browser.
 ```
 http://192.168.56.102:50070/
 ```
-1. Verify All Applications for Cluster
+9. Verify All Applications for Cluster
 The default port number to access all applications of cluster is 8088. Use the following url to visit this service.
 ```
 http://192.168.56.102:8088/
 ```
-1. Stop dfs and yarn script
+10. Stop dfs and yarn script
 ```
 stop-yarn.sh
 stop-dfs.sh
@@ -278,15 +281,15 @@ The following instruction is based on this link https://medium.com/@josemarcialp
 ```
 sudo apt-get install scala
 ```
-1. Start the scala shell
+2. Start the scala shell
 ```
 scala
 ```
-1. You should see the scala REPL running. Test it with:
+3. You should see the scala REPL running. Test it with:
 ```
 println(“Hello Word”)
 ```
-1. Exit the shell
+4. Exit the shell
 ```
 :q
 ```
@@ -297,21 +300,21 @@ The following instruction is based on this link https://medium.com/@josemarcialp
 ```
 wget http://www-eu.apache.org/dist/spark/spark-2.3.0/spark-2.3.0-bin-hadoop2.7.tgz
 ```
-1. Untar the file and move the extracted files to /opt/spark
+2. Untar the file and move the extracted files to /opt/spark
 ```
 tar -xzvf spark-2.3.0-bin-hadoop2.7.tgz
 sudo mv spark-2.3.0-bin-hadoop2.7 /opt/spark
 ```
-1. Open the spark shell to verify the setup is successful.
+3. Open the spark shell to verify the setup is successful.
 ```
 cd /opt/spark/bin
 ./spark-shell
 ```
-1. Test it with:
+4. Test it with:
 ```
 println(“Spark shell is running”)
 ```
-1. Exit the shell
+5. Exit the shell
 ```
 :q
 ```
@@ -322,23 +325,23 @@ The following instruction is based on this link https://www.tutorialspoint.com/a
 ```
 wget http://www-eu.apache.org/dist/flume/1.8.0/apache-flume-1.8.0-bin.tar.gz
 ```
-1. Untar the file and move the extracted files to /opt/flume
+2. Untar the file and move the extracted files to /opt/flume
 ```
 tar -xzvf apache-flume-1.8.0-bin.tar.gz 
 sudo mv apache-flume-1.8.0-bin /opt/flume
 ```
-1. In the .bashrc file, set the home folder, the path, and the classpath for Flume as shown below.
+3. In the .bashrc file, set the home folder, the path, and the classpath for Flume as shown below.
 ```
 export FLUME_HOME=/opt/flume
 export PATH=$PATH:$FLUME_HOME/bin
 export CLASSPATH=$CLASSPATH:$FLUME_HOME/lib/*
 ```
-1. Make copies of these property files:
+4. Make copies of these property files:
 ```
 cp flume-conf.properties.template flume-conf.properties
 cp flume-env.sh.template flume-env.sh
 ```
-1. Verify the installation by running this command
+5. Verify the installation by running this command
 ```
 flume-ng
 ```
@@ -356,7 +359,7 @@ commands:
   version                   show Flume version info
 ```
 
-Zeppelin
+### Zeppelin
 http://zeppelin.apache.org/docs/0.7.3/install/install.html
 Move to /usr/local/zeppelin
 If you are configuring auto start, note the path to zeppelin
