@@ -1,4 +1,4 @@
-# Install SBT
+# Install sbt
 The following instruction is based on this link https://www.scala-sbt.org/1.0/docs/Setup.html
 1. Run the following commands to install sbt
 ```
