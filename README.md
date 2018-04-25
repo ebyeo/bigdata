@@ -39,7 +39,9 @@ Kafka | 1.0.1 | http://kafka.apache.org | For publishing and subscribing to mess
 Zeppelin | 0.7.3 | https://zeppelin.apache.org | A web-based notebook for interactive data analytics with Scala and more
 
 ## Installation
-Please install the components in the order presented in this guide.
+Please install the components in the order presented in this guide:
+
+* Install [VirtualBox](./docs/guide/01 virtualbox.md)
 
 ### VirtualBox
 1. Download and install the latest VirtualBox binaries from https://www.virtualbox.org/wiki/Downloads. After installing. launch VirtualBox to start creating an Ubuntu virtual machine.
@@ -356,7 +358,8 @@ http://zeppelin.apache.org/docs/0.7.3/install/install.html
 Move to /usr/local/zeppelin
 If you are configuring auto start, note the path to zeppelin
 http://192.168.56.101:8080
-ZooKeeper
+
+### ZooKeeper
 https://www.tutorialspoint.com/zookeeper/zookeeper_installation.htm
 zookeeper-3.4.11.tar.gz
 /opt/zookeeper
@@ -364,13 +367,15 @@ make a copy of zoo.cfg from zoo_sample.cfg in /opt/zookeeper/conf
 change dataDir=/home/bigdata/data/zookeeper
 sudo mkdir /opt/zookeeper/logs
 update log4j.properties zookeeper.log.dir, zookeeper.tracelog.dir to /opt/zookeeper/logs
-Apache HBase
+
+### Apache HBase
 Download from https://hbase.apache.org/, stable release hbase-1.2.6-bin.tar.gz
 Configure https://www.tutorialspoint.com/hbase/hbase_installation.htm
 Note that the path to store the name nodes is /home/bigdata instead of /home/hadoop
 Turn off hbase managing zookeeper
 export HBASE_MANAGES_ZK=false
-Kafka
+
+#### Kafka
 https://devops.profitbricks.com/tutorials/install-and-configure-apache-kafka-on-ubuntu-1604-1/
 kafka_2.11-1.0.1.tgz
 /opt/kafka
@@ -379,15 +384,30 @@ export LOG_DIR=/opt/kafka/logs
 sudo nohup /opt/kafka/bin/kafka-server-start.sh /opt/kafka/config/server.properties /tmp/kafka.log 2>&1 
 https://kafka.apache.org/quickstart
 
-Start Stop System
-Start
-Start-all.sh
-Jps to ensure all the components are up and running
-Stop 
-Stop-all.sh to stop all process
-Essential Information
-VM IP	192.168.56.102
-User ID / Password	bigdata / bigdata2018
-	
-	
+## Run the analysis
+1. Start Hadoop
+```
+start-dfs.sh
+start-yarn.sh
+```
+2. Check that the processes are started successfully:
+```
+bigdata@ubuntu:~$ jps
+6707 Jps
+6150 SecondaryNameNode
+6295 ResourceManager
+5817 NameNode
+6428 NodeManager
+5966 DataNode
+```
+10. Stop Hadoop
+```
+stop-yarn.sh
+stop-dfs.sh
+```
 
+## Essential Information
+
+VM IP | 192.168.56.102
+User ID / Password | bigdata / bigdata2018
+Source Code | https://github.com/e0015358/big-graph-data
