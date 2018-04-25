@@ -45,54 +45,56 @@ Please install the components in the order presented in this guide.
 1.	Download and install the latest VirtualBox binaries from https://www.virtualbox.org/wiki/Downloads. After installing. launch VirtualBox to start creating an Ubuntu virtual machine.
 1.	Click _New_ to create a virtual machine
 1.	In the dialog box, enter as follow and click _Next_
-![vb-01](./docs/assets/virtualbox/vb-01.png | width = 150)
-1.	Set the memory size to 4096 MB and click Next
-1.	Select Create a virtual hard disk now and click Create
-1.	Select VDI (VirtualBox Disk Image) and click Next
-1.	Select dynamically allocated and click Next
-1.	Take the default name of the virtual hard disk and increase the size to 20 GB, click on the icon next to the name and select the directory to store the file, preferably in a large enough hard disk. Finally, click Create.
-1.	Click Settings -> Network. Enable Adapter 1, select Host-only Adapter and enable Adapter 2 and select Nat Network. Click OK to complete the network setup.
+![vb-01](./docs/assets/virtualbox/vb-01.png)
+1.	Set the memory size to 4096 MB and click _Next_
+1.	Select _Create a virtual hard disk now_ and click _Create_
+![vb-02](./docs/assets/virtualbox/vb-02.png)
+1.	Select _VDI (VirtualBox Disk Image)_ and click _Next_
+1.	Select _dynamically allocated_ and click _Next_
+1.	Take the default name of the virtual hard disk and increase the size to 20 GB, click on the icon next to the name and select the directory to store the file, preferably in a large enough hard disk. Finally, click _Create_.
+![vb-03](./docs/assets/virtualbox/vb-03.png)
+1.	Click _Settings_ -> _Network_. Enable _Adapter 1_, select _Host-only Adapter_ and enable _Adapter 2_ and select _Nat Network_. Click _OK_ to complete the network setup.
 
 ### Ubuntu Server
 The following instruction is based on this link https://topnetworkguide.com/install-ubuntu-server-16-04-virtual-box/
-1.	Download Ubuntu Server 16.04.4 LTS from https://www.ubuntu.com/download/server
-2.	Then return to VirtualBox, select big data and click Settings  Storage
-3.	Under Controller: IDE, select Empty then click on the disk icon on the right and select the iso image of the Ubuntu Server that was downloaded in step 1 above. Click OK.
- 
-4.	Click Start to power up the VM.
-5.	The first screen you see on boot up is language. Select English.
- 
-6.	Click Install Ubuntu Server.
- 
-7.	Select English as the language the system will be setup with and select Singapore. Configure the keyboard layout.
-8.	The system proceeds to configure the network interfaces and the likes. Choose enp0s8 as the primary network interface.
- 
-9.	After the network interface has been configured successfully, you will be presented with the screen below. Enter the hostname for the machine as ubuntu. If the network interface is not successfully set up, repeat step 8 with the other network interface.
- 
-10.	Enter bigdata as the username and bigdata2018 as the password.
-11.	In the setup user screen, choose No to encrypting the home directory since this is a lab environment.
-12.	Choose Singapore timezone.
-13.	In the partition disk, click use entire disk and set up lvm. Hit enter two times, click Yes to writing changes. In the partition disk, hit continue and click Yes. 
- 
-14.	Now the system will begin installation. This will take a while to complete.
- 
-15.	Leave blank and click Continue
- 
-16.	Wait for the setup to complete
- 
-17.	Click on no automatic update as it will be done manually.
-18.	Accept the defaults as we do not need the server to perform these functions.
- 
-19.	Click Yes to install grub bootloader to mbr as it is the only OS on the virtual machine.
-20.	At this point, you will be asked to reboot your system because the installation has been completed.
- 
-Configure Virtual Machine
-The following instruction is based on these links https://www.tecmint.com/network-between-guest-vm-and-host-virtualbox/ and https://unix.stackexchange.com/questions/145997/trying-to-ssh-to-local-vm-ubuntu-with-putty to enable communication between the host and the virtual machines. This is required to be able to launch Zeppelin from the host machine. No static IP is configured as we are not certain if it will work between home and ISS network.
-1.	Install Putty on the host PC so that you can have multiple SSH sessions into the guest VM. 
-2.	Configure the network interface in the guest VM
-a.	Launch and log in into Ubuntu
-b.	Edit /etc/network/interfaces
+1. Download Ubuntu Server 16.04.4 LTS from https://www.ubuntu.com/download/server
+1. Then return to VirtualBox, select _big data_ and click _Settings_ -> _Storage_
+1. Under _Controller: IDE_, select _Empty_ then click on the disk icon on the right and select the iso image of the Ubuntu Server that was downloaded in step 1 above. Click _OK_.
+![vb-04](./docs/assets/virtualbox/vb-04.png)
+1. Click _Start_ to power up the VM.
+1. The first screen you see on boot up is language. Select _English_.
+![ub-01](./docs/assets/ubuntu/ub-01.png)
+1. Click _Install Ubuntu Server_.
+![ub-02](./docs/assets/ubuntu/ub-02.png)
+1. Select _English_ as the language the system will be setup with and select _Singapore_. Configure the keyboard layout.
+1. The system proceeds to configure the network interfaces and the likes. Choose _enp0s8_ as the primary network interface.
+![ub-03](./docs/assets/ubuntu/ub-03.png)
+1. After the network interface has been configured successfully, you will be presented with the screen below. Enter the hostname for the machine as _ubuntu_. If the network interface is not successfully set up, repeat step 8 with the other network interface.
+![ub-04](./docs/assets/ubuntu/ub-04.png)
+1. Enter _bigdata_ as the username and _bigdata2018_ as the password.
+1. In the setup user screen, choose _No_ to encrypting the home directory since this is a lab environment.
+1. Choose _Singapore_ timezone.
+1. In the partition disk, click _use entire disk and set up lvm_. Hit enter two times, click _Yes_ to writing changes. In the partition disk, hit continue and click _Yes_. 
+![ub-05](./docs/assets/ubuntu/ub-05.png)
+1. Now the system will begin installation. This will take a while to complete.
+![ub-06](./docs/assets/ubuntu/ub-06.png)
+1. Leave blank and click _Continue_
+![ub-07](./docs/assets/ubuntu/ub-07.png)
+1. Wait for the setup to complete
+![ub-08](./docs/assets/ubuntu/ub-08.png)
+1. Click on _no automatic update_ as it will be done manually.
+1. Accept the defaults as we do not need the server to perform these functions.
+![ub-09](./docs/assets/ubuntu/ub-09.png)
+1. Click _Yes_ to install grub bootloader to mbr as it is the only OS on the virtual machine.
+1. At this point, you will be asked to reboot your system because the installation has been completed.
+![ub-10](./docs/assets/ubuntu/ub-10.png)
 
+### Configure Virtual Machine
+The following instruction is based on these links https://www.tecmint.com/network-between-guest-vm-and-host-virtualbox/ and https://unix.stackexchange.com/questions/145997/trying-to-ssh-to-local-vm-ubuntu-with-putty to enable communication between the host and the virtual machines. This is required to be able to launch Zeppelin from the host machine. No static IP is configured as we are not certain if it will work between home and ISS network.
+1. Install Putty on the host PC so that you can have multiple SSH sessions into the guest VM. 
+1. Configure the network interface in the guest VM
+   1. Launch and log in into Ubuntu
+   1. Edit /etc/network/interfaces
 sudo vi /etc/network/interfaces
 
 Append the following entries:
