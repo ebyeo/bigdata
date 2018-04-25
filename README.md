@@ -47,6 +47,6 @@ Please install the components in the order presented in this guide:
 * [Install Java](./docs/guide/04-java.md)
 * [Install Hadoop](./docs/guide/05-hadoop.md)
 * [Install sbt](./docs/guide/06-sbt.md)
-* [Install Scala(./docs/guide/07-scala.md)
+* [Install Scala](./docs/guide/07-scala.md)
 * [Install Spark](./docs/guide/08-spark.md)
 * [Install Flume](./docs/guide/09-flume.md)
