@@ -45,7 +45,7 @@ Please install the components in the order presented in this guide.
 1.	Download and install the latest VirtualBox binaries from https://www.virtualbox.org/wiki/Downloads. After installing. launch VirtualBox to start creating an Ubuntu virtual machine.
 1.	Click _New_ to create a virtual machine
 1.	In the dialog box, enter as follow and click _Next_
-![vb-01](./docs/assets/virtualbox/vb-01.png)
+![vb-01](./docs/assets/virtualbox/vb-01.png | width = 150)
 1.	Set the memory size to 4096 MB and click Next
 1.	Select Create a virtual hard disk now and click Create
 1.	Select VDI (VirtualBox Disk Image) and click Next
