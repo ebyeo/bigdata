@@ -28,7 +28,7 @@ Apache Zookeeper | 3.4.11 | http://zookeeper.apache.org | Coordinate distributed
 Apache Hadoop | 2.7.5 | http://hadoop.apache.org | Comprise HDFS and Yarn
 Apache Flume | 1.8.0 | http://flume.apache.org | To ingest the trip logs and deposit into HDFS
 Apache Spark | 2.3.0 | http://spark.apache.org | To process the file and use GraphX for the graph analysis
-SBT	1.1.1 | https://www.scala-sbt.org | Build tool for Scala
+SBT	| 1.1.1 | https://www.scala-sbt.org | Build tool for Scala
 
 Other components installed but not use in the demo:
 
@@ -39,12 +39,13 @@ Kafka | 1.0.1 | http://kafka.apache.org | For publishing and subscribing to mess
 Zeppelin | 0.7.3 | https://zeppelin.apache.org | A web-based notebook for interactive data analytics with Scala and more
 
 ## Installation
-Please install the components in the order presented in this guide. The system is setup on a Ubuntu VirtualBox VM, the user name and password to the VM are: bigdata / bigdata2018
+Please install the components in the order presented in this guide.
 
 ### VirtualBox
 1.	Download and install the latest VirtualBox binaries from https://www.virtualbox.org/wiki/Downloads. After installing. launch VirtualBox to start creating an Ubuntu virtual machine.
-1.	Click New to create a virtual machine
-1.	In the dialog box, enter as follow and click Next
+1.	Click _New_ to create a virtual machine
+1.	In the dialog box, enter as follow and click _Next_
+![vb-01](./docs/assets/virtualbox/vb-01.png)
 1.	Set the memory size to 4096 MB and click Next
 1.	Select Create a virtual hard disk now and click Create
 1.	Select VDI (VirtualBox Disk Image) and click Next
