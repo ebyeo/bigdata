@@ -93,23 +93,28 @@ The following instruction is based on this link https://topnetworkguide.com/inst
 The following instruction is based on these links https://www.tecmint.com/network-between-guest-vm-and-host-virtualbox/ and https://unix.stackexchange.com/questions/145997/trying-to-ssh-to-local-vm-ubuntu-with-putty to enable communication between the host and the virtual machines. This is required to be able to launch Zeppelin from the host machine. No static IP is configured as we are not certain if it will work between home and ISS network.
 1. Install [Putty](https://www.putty.org/) on the host PC so that you can have multiple SSH sessions into the guest VM. 
 2. Configure the network interface in the guest VM
+
    a. Launch and log in into Ubuntu
+
    b. Edit /etc/network/interfaces
 ```
 sudo vi /etc/network/interfaces
 ```
 
-Append the following entries:
+      Append the following entries:
 
 
 ```
 auto enp0s3
 iface enp0s3 inet dhcp
 ```
+
    c. Restart the network interfaces 
+
 ```
-      sudo systemctl restart networking
+sudo systemctl restart networking
 ```
+
 3. Install the ssh server in the guest VM
 ```
 sudo apt-get install openssh-server
@@ -126,22 +131,27 @@ sudo apt-get update
 sudo apt-get install default-jdk
 ```
 3. Setting the JAVA_HOME Environment Variable
+
    a. To set this environment variable, we will first need to find out where Java is installed. You can do this by executing the same command as in the previous section:
 ```
 sudo update-alternatives --config java
 ```
+   
    b. Copy the path and then open /etc/environment
 ```
 sudo vi /etc/environment
 ```
+   
    c. At the end of this file, add the following line, making sure to replace the highlighted path with your own copied path.
 ```
 JAVA_HOME="/usr/lib/jvm/java-8-openjdk-amd64"
 ```
+   
    d. Save and exit the file and reload it.
 ```
 source /etc/environment
 ```
+   
    e. You can now test whether the environment variable has been set by executing the following command:
 ```
 echo $JAVA_HOME
@@ -178,21 +188,26 @@ export HADOOP_COMMON_LIB_NATIVE_DIR=$HADOOP_HOME/lib/native
 export PATH=$PATH:$HADOOP_HOME/sbin:$HADOOP_HOME/bin 
 export HADOOP_INSTALL=$HADOOP_HOME
 ```
-Now apply all the changes into the current running system.
+
+   Now apply all the changes into the current running system.
 ```
 source ~/.bashrc
 ```
 4. Configure Hadoop configuration files in the /opt/hadoop/etc/hadoop. 
+
    a. core-site.xml
-The core-site.xml file contains information such as the port number used for Hadoop instance, memory allocated for the file system, memory limit for storing the data, and size of Read/Write buffers. Open the core-site.xml and add the following properties in between <configuration>, </configuration> tags.
+   
+      The core-site.xml file contains information such as the port number used for Hadoop instance, memory allocated for the file system, memory limit for storing the data, and size of Read/Write buffers. Open the core-site.xml and add the following properties in between <configuration>, </configuration> tags.
 ```
    <property>
       <name>fs.default.name</name>
       <value>hdfs://localhost:9000</value> 
    </property>
 ```
+
    b. hdfs-site.xml
-The hdfs-site.xml file contains information such as the value of replication data, namenode path, and datanode paths of your local file systems. It means the place where you want to store the Hadoop infrastructure. Open this file and add the following properties in between the <configuration> </configuration> tags in this file.
+
+      The hdfs-site.xml file contains information such as the value of replication data, namenode path, and datanode paths of your local file systems. It means the place where you want to store the Hadoop infrastructure. Open this file and add the following properties in between the <configuration> </configuration> tags in this file.
 ```
    <property>
       <name>dfs.replication</name>
@@ -208,9 +223,10 @@ The hdfs-site.xml file contains information such as the value of replication dat
       <name>dfs.data.dir</name> 
       <value>file:///home/bigdata/hadoopinfra/hdfs/datanode </value> 
    </property>
-```       
+```
+
    c. yarn-site.xml
-This file is used to configure yarn into Hadoop. Open the yarn-site.xml file and add the following properties in between the <configuration>, </configuration> tags in this file.
+      This file is used to configure yarn into Hadoop. Open the yarn-site.xml file and add the following properties in between the <configuration>, </configuration> tags in this file.
 ```
    <property>
       <name>yarn.nodemanager.aux-services</name>
@@ -218,11 +234,13 @@ This file is used to configure yarn into Hadoop. Open the yarn-site.xml file and
    </property>
 ```  
    d. mapred-site.xml
-This file is used to specify which MapReduce framework we are using. By default, Hadoop contains a template of yarn-site.xml. First of all, it is required to copy the file from mapred-site.xml.template to mapred-site.xml file using the following command.
+   
+      This file is used to specify which MapReduce framework we are using. By default, Hadoop contains a template of yarn-site.xml. First of all, it is required to copy the file from mapred-site.xml.template to mapred-site.xml file using the following command.
 ```
 cp mapred-site.xml.template mapred-site.xml
 ```
-Open mapred-site.xml file and add the following properties in between the <configuration>, </configuration>tags in this file.
+
+      Open mapred-site.xml file and add the following properties in between the <configuration>, </configuration>tags in this file.
 ```
    <property> 
       <name>mapreduce.framework.name</name>
