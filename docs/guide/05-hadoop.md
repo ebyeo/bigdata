@@ -1,4 +1,4 @@
-# Hadoop, Yarn, HDFS
+# Install Hadoop, Yarn, HDFS
 The following instruction is based on these links:
 - https://www.digitalocean.com/community/tutorials/how-to-install-hadoop-in-stand-alone-mode-on-ubuntu-16-04
 - http://techsphot.com/set-up-hadoop-in-pseudo-distributed-mode-on-ubuntu/
