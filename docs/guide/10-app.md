@@ -31,7 +31,7 @@ cd ~/projects/big-graph-data/bikeshare
 sbt
 ...
 > run
-> quit
+> exit
 ```
 
 6. Stop dfs and yarn processes
