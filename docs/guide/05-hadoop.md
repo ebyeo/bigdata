@@ -106,7 +106,7 @@ The default port number to access all applications of cluster is 8088. Use the f
 ```
 http://192.168.56.102:8088/
 ```
-16. Stop dfs and yarn script
+16. Stop dfs and yarn processes
 ```
 stop-yarn.sh
 stop-dfs.sh

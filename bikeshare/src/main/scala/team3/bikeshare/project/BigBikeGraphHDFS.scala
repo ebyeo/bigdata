@@ -13,7 +13,7 @@ object BikeShareAppHDFS {
     Logger.getLogger("akka").setLevel(Level.OFF)
     val sparkSession = SparkSession.builder.master("local").appName("Bike Share Big Graph").getOrCreate()
     sparkSession.conf.set("spark.executor.memory", "3g")
-    val newDf = sparkSession.read.option("header","true").csv("hdfs://localhost/fordgobike/")
+    val newDf = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/")
     // var newDf = df.sample(false, 0.1)
     newDf.printSchema()
     newDf.show()
