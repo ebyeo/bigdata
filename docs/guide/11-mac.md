@@ -1,4 +1,4 @@
-# Installation on a OS X
+# Installation on OS X
 
 * Install or update to Java SE Development Kit 8 >> https://docs.oracle.com/javase/8/docs/technotes/guides/install/install_overview.html
 * Install Scala >> https://www.scala-lang.org/download/
@@ -24,8 +24,7 @@ Place the sample config in /usr/local/Cellar/flume/1.6.0/libexec/conf/
 Flume read CSV Instructions >> <https://acadgild.com/blog/loading-files-into-hdfs-using-flumes-spool-directory/>
 
 To run flume:
->/usr/local/Cellar/flume/1.6.0/bin/flume-ng agent --name agent1 -f /usr/local/Cellar/flume/1.6.0/libexec/conf/bikeshare.conf
-<br><br>
+> /usr/local/Cellar/flume/1.6.0/bin/flume-ng agent --name agent1 -f /usr/local/Cellar/flume/1.6.0/libexec/conf/bikeshare.conf
 
 To list files in HDFS:
 > hdfs dfs -ls /flume_sink | sort -k6,7
