@@ -16,7 +16,7 @@ For the demo, the system is put together in a VirtualBox VM with Ubuntu OS. The 
 * processing using Spark RDD and GraphX
 * analysis and visualisation using [Carto](https://carto.com/)
 
-The source codes are available at github.
+The source codes are available at [github](https://github.com/ebyeo/bigdata).
 
 ## Components
 The system comprises the following components:
