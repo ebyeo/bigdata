@@ -50,3 +50,6 @@ Please install the components in the order presented in this guide:
 * [Install Scala](./docs/guide/07-scala.md)
 * [Install Apache Spark](./docs/guide/08-spark.md)
 * [Install Apache Flume](./docs/guide/09-flume.md)
+* [Install Application](./docs/guide/10-app.md)
+
+Refer to [these instructions](./docs/guide/11-mac.md) for installations on a Mac.
