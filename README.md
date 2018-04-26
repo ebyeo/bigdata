@@ -18,7 +18,7 @@ For the demo, the system is put together in a VirtualBox VM with Ubuntu OS. The 
 
 The source codes are available at [github](https://github.com/ebyeo/bigdata).
 
-![ov-01](../assets/overview/ov-01.png)
+![ov-01](.docs/assets/overview/ov-01.png)
 
 ## Components
 The system comprises the following components:
