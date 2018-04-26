@@ -1,7 +1,9 @@
-# Big Data Assignment: Ford GoBike System Guide
+# Big Graph Data Analysis in Spark: Ford GoBike
 
 ## Introduction
 This guide provides instruction to set up the Ford GoBike analytic application which is a big data platform designed to scale as the bike sharing scheme expands to cover more area across the states.
+
+Here we attempt to use GraphX to model the BikeShare data from [Ford GoBike](www.fordgobike.com/system-data)
 
 In a nutshell, the input and output of the system are:
 * source data is provided by Ford GoBike at their [website](https://www.fordgobike.com/) via this [link](https://www.fordgobike.com/system-data)
@@ -52,4 +54,30 @@ Please install the components in the order presented in this guide:
 * [Install Apache Flume](./docs/guide/09-flume.md)
 * [Install Application](./docs/guide/10-app.md)
 
-Refer to [these instructions](./docs/guide/11-mac.md) for installations on a Mac.
+Refer to [these instructions](./docs/guide/11-mac.md) for installation on a OS X.
+
+## Results
+
+PageRank measures the importance of each vertex in a graph, by determining which vertexes have the most edges with other vertexes. In our example, we can use PageRank to determine which bike stations are the most important by measuring which stations have the most connections to other stations.
+
+PageRank for 201801_fordgobike_tripdata
+```
+Processing 94802 datapoints
+Telegraph Ave at 19th St has a pagerank of 216
+Frank H Ogawa Plaza has a pagerank of 215
+San Jose Diridon Station has a pagerank of 190
+19th Street BART Station has a pagerank of 183
+Grand Ave at Webster St has a pagerank of 183
+San Fernando St at 4th St has a pagerank of 179
+Telegraph Ave at 23rd St has a pagerank of 178
+Bay Pl at Vernon St has a pagerank of 175
+West Oakland BART Station has a pagerank of 170
+MacArthur BART Station has a pagerank of 160
+[success] Total time: 5176 s, completed 14 Apr 2018, 1:03:12 AM
+```
+## References
+### GraphX Resources
+* <http://www.sparktutorials.net/Analyzing+Flight+Data%3A+A+Gentle+Introduction+to+GraphX+in+Spark>
+* <https://github.com/caroljmcdonald/sparkgraphxexample>
+* <https://docs.databricks.com/spark/latest/graph-analysis/graph-analysis-graphx-tutorial.html>
+
