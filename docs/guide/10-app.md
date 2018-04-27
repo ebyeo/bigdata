@@ -31,6 +31,22 @@ cd ~/projects/big-graph-data/bikeshare
 sbt
 ...
 > run
+```
+You should see the following output:
+```
+[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
+
+Multiple main classes detected, select one to run:
+
+ [1] team3.bikeshare.project.BigBikeGraphBikeMaintainance
+ [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
+ [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
+ [4] team3.bikeshare.project.BikeShareAppFordGoDataset
+ [5] team3.bikeshare.project.BikeShareAppHDFS
+ [6] team3.bikeshare.project.BikeShareAppPageRank
+
+Enter number: 
+
 > exit
 ```
 
