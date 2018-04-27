@@ -14,7 +14,7 @@ object BikeShareAppFordGoDataset {
     Logger.getLogger("akka").setLevel(Level.OFF)
     val sparkSession = SparkSession.builder.master("local").appName("Bike Share Big Graph").getOrCreate()
     sparkSession.conf.set("spark.executor.memory", "3g")
-    val df = sparkSession.read.option("header","true").csv("src/main/resources/201801_fordgobike_tripdata.csv.COMPLETED")
+    val df = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/")
     var newDf = df.sample(false, 0.1)
     newDf.printSchema()
     val start_stations = newDf.selectExpr("cast(start_station_id as int) start_station_id", "start_station_name").distinct
