@@ -13,7 +13,7 @@ object BigBikeGraphOutBoundInBound {
     val sparkSession = SparkSession.builder.master("local").appName("Bike Share Vertex Degrees").getOrCreate()
     sparkSession.conf.set("spark.executor.memory", "3g")
     val sc = sparkSession.sparkContext
-    val newDf = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/")
+    val newDf = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/FlumeData.1524840146052.tmp")
     println("Processing "+ newDf.count + " datapoints")
     val start_stations = newDf.selectExpr("cast(start_station_id as int) start_station_id", "start_station_name", "start_station_latitude", "start_station_longitude").distinct
     val start_stations_rdd = start_stations.rdd
