@@ -53,7 +53,7 @@ object BigBikeGraphOutBoundInBound {
     println("Bike stations with the most outbound traffic:")
     top_outbound.take(10).foreach(x => println(x._2._2 + " has " + x._2._1 + " out degrees."))
     val top_outbound_file = "top_outbound"
-    // top_outbound.coalesce(1).map(tuple => "%s,%s".format(tuple._2._2, tuple._2._1)).saveAsTextFile(top_outbound_file)
+    top_outbound.coalesce(1).map(tuple => "%s,%s".format(tuple._2._2, tuple._2._1)).saveAsTextFile(top_outbound_file)
     println("="*70)
     sparkSession.stop()
   }

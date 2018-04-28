@@ -57,7 +57,7 @@ object BigBikeGraphDegreesRatio {
         .sortBy(_._1, ascending=false) // sort by high to low
     top_sources.take(10).foreach(x => println(x._2 + " has a out/in degree ratio of " + x._1))
     val top_sources_file = "top_sources"
-    // top_sources.coalesce(1).map(tuple => "%s,%s".format(tuple._2, (tuple._1*tuple._1*tuple._1).toDouble)).saveAsTextFile(top_sources_file)
+    top_sources.coalesce(1).map(tuple => "%s,%s".format(tuple._2, (tuple._1*tuple._1*tuple._1).toDouble)).saveAsTextFile(top_sources_file)
     sparkSession.stop()
   }
 }
