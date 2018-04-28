@@ -12,8 +12,7 @@ Multiple main classes detected, select one to run:
  [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
  [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
  [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
+ [5] team3.bikeshare.project.BikeShareAppPageRank
 
 Enter number: 1
 
@@ -71,8 +70,7 @@ Multiple main classes detected, select one to run:
  [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
  [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
  [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
+ [5] team3.bikeshare.project.BikeShareAppPageRank
 
 Enter number: 2
 
@@ -118,8 +116,7 @@ Multiple main classes detected, select one to run:
  [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
  [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
  [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
+ [5] team3.bikeshare.project.BikeShareAppPageRank
 
 Enter number: 3
 
@@ -166,8 +163,7 @@ Multiple main classes detected, select one to run:
  [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
  [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
  [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
+ [5] team3.bikeshare.project.BikeShareAppPageRank
 
 Enter number: 4
 
@@ -224,101 +220,6 @@ Total Number of Trips in Original Data: 94
 >
 ```
 
-## HDFS
-```
-> run
-[warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
-
-Multiple main classes detected, select one to run:
-
- [1] team3.bikeshare.project.BigBikeGraphBikeMaintainance
- [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
- [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
- [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
-
-Enter number: 5
-
-[info] Running team3.bikeshare.project.BikeShareAppHDFS
-Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
-root
- |-- duration_sec: string (nullable = true)
- |-- start_time: string (nullable = true)
- |-- end_time: string (nullable = true)
- |-- start_station_id: string (nullable = true)
- |-- start_station_name: string (nullable = true)
- |-- start_station_latitude: string (nullable = true)
- |-- start_station_longitude: string (nullable = true)
- |-- end_station_id: string (nullable = true)
- |-- end_station_name: string (nullable = true)
- |-- end_station_latitude: string (nullable = true)
- |-- end_station_longitude: string (nullable = true)
- |-- bike_id: string (nullable = true)
- |-- user_type: string (nullable = true)
- |-- member_birth_year: string (nullable = true)
- |-- member_gender: string (nullable = true)
-
-+------------+--------------------+--------------------+----------------+--------------------+----------------------+-----------------------+--------------+--------------------+--------------------+---------------------+-------+----------+-----------------+-------------+
-|duration_sec|          start_time|            end_time|start_station_id|  start_station_name|start_station_latitude|start_station_longitude|end_station_id|    end_station_name|end_station_latitude|end_station_longitude|bike_id| user_type|member_birth_year|member_gender|
-+------------+--------------------+--------------------+----------------+--------------------+----------------------+-----------------------+--------------+--------------------+--------------------+---------------------+-------+----------+-----------------+-------------+
-|       75284|2018-01-31 22:52:...|2018-02-01 19:47:...|             120|Mission Dolores Park|            37.7614205|           -122.4264353|           285|Webster St at O'F...|   37.78352083526095|  -122.43115782737732|   2765|Subscriber|             1986|         Male|
-|       85422|2018-01-31 16:13:...|2018-02-01 15:57:...|              15|San Francisco Fer...|             37.795392|            -122.394203|            15|San Francisco Fer...|           37.795392|          -122.394203|   2815|  Customer|             null|         null|
-|       71576|2018-01-31 14:23:...|2018-02-01 10:16:...|             304|Jackson St at 5th St|      37.3487586867448|    -121.89479783177376|           296|5th St at Virgini...|          37.3259984|           -121.87712|   3039|  Customer|             1996|         Male|
-|       61076|2018-01-31 14:53:...|2018-02-01 07:51:...|              75|Market St at Fran...|      37.7737932060887|    -122.42123901844025|            47|4th St at Harriso...|   37.78095459960753|  -122.39974915981291|    321|  Customer|             null|         null|
-|       39966|2018-01-31 19:52:...|2018-02-01 06:58:...|              74|Laguna St at Haye...|    37.776434819204745|    -122.42624402046204|            19|Post St at Kearny St|           37.788975|          -122.403452|    617|Subscriber|             1991|         Male|
-|        6477|2018-01-31 22:58:...|2018-02-01 00:46:...|             236| Market St at 8th St|            37.8036865|            -122.282497|           160|West Oakland BART...|          37.8053183|         -122.2948365|   1306|  Customer|             null|         null|
-|         453|2018-01-31 23:53:...|2018-02-01 00:01:...|             110|17th & Folsom Str...|            37.7637085|           -122.4152042|           134|Valencia St at 24...|          37.7524278|         -122.4206278|   3571|Subscriber|             1988|         Male|
-|         180|2018-01-31 23:52:...|2018-01-31 23:55:...|              81|  Berry St at 4th St|              37.77588|             -122.39317|            93|4th St at Mission...|          37.7704074|         -122.3911984|   1403|Subscriber|             1980|         Male|
-|         996|2018-01-31 23:34:...|2018-01-31 23:51:...|             134|Valencia St at 24...|            37.7524278|           -122.4206278|             4|Cyril Magnin St a...|   37.78588062694133|   -122.4089150084319|   3675|Subscriber|             1987|         Male|
-|         825|2018-01-31 23:34:...|2018-01-31 23:47:...|             305|         Ryland Park|             37.342725|            -121.895617|           317|San Salvador St a...|           37.333955|          -121.877349|   1453|Subscriber|             1994|       Female|
-|        1316|2018-01-31 23:24:...|2018-01-31 23:45:...|              98|Valencia St at 16...|             37.765052|           -122.4218661|             4|Cyril Magnin St a...|   37.78588062694133|   -122.4089150084319|   1278|  Customer|             null|         null|
-|         432|2018-01-31 23:34:...|2018-01-31 23:41:...|              89|Division St at Po...|     37.76921786152374|    -122.40764558315276|            43|San Francisco Pub...|          37.7787677|         -122.4159292|   2928|Subscriber|             1993|         Male|
-|         601|2018-01-31 23:29:...|2018-01-31 23:39:...|             223|16th St Mission B...|      37.7647652154977|    -122.42009103298186|            86|Market St at Dolo...|          37.7693053|         -122.4268256|   3016|Subscriber|             1957|         Male|
-|         887|2018-01-31 23:24:...|2018-01-31 23:39:...|             308|    San Pedro Square|             37.336802|           -121.8940901|           297|Locust St at Gran...|          37.3229796|         -121.8879312|     55|Subscriber|             1976|       Female|
-|         210|2018-01-31 23:33:...|2018-01-31 23:36:...|               7| Frank H Ogawa Plaza|      37.8045623549303|    -122.27173805236816|           186|Lakeside Dr at 14...|          37.8013189|         -122.2626418|   2602|Subscriber|             1976|         Male|
-|         188|2018-01-31 23:30:...|2018-01-31 23:34:...|              98|Valencia St at 16...|             37.765052|           -122.4218661|            76|McCoppin St at Va...|   37.77166246221617|  -122.42242321372034|   2556|Subscriber|             1964|       Female|
-|         808|2018-01-31 23:19:...|2018-01-31 23:33:...|              67|San Francisco Cal...|            37.7766392|           -122.3955263|            98|Valencia St at 16...|           37.765052|         -122.4218661|   3041|Subscriber|             1976|         Male|
-|         378|2018-01-31 23:23:...|2018-01-31 23:29:...|              80|Townsend St at 5t...|            37.7753058|             -122.39738|            78| Folsom St at 9th St|          37.7737172|         -122.4116467|    546|Subscriber|             1995|       Female|
-|         350|2018-01-31 23:13:...|2018-01-31 23:19:...|             247|Fulton St at Banc...|            37.8677892|           -122.2658964|           274|Oregon St at Adel...|          37.8575672|         -122.2675583|    431|Subscriber|             null|         null|
-|         686|2018-01-31 23:07:...|2018-01-31 23:18:...|             312|San Jose Diridon ...|             37.329732|            -121.901782|           317|San Salvador St a...|           37.333955|          -121.877349|   1886|Subscriber|             1997|       Female|
-+------------+--------------------+--------------------+----------------+--------------------+----------------------+-----------------------+--------------+--------------------+--------------------+---------------------+-------+----------+-----------------+-------------+
-only showing top 20 rows
-
-+----------------+--------------------+
-|start_station_id|  start_station_name|
-+----------------+--------------------+
-|             323|  Broadway at Kearny|
-|             102|  Irwin St at 8th St|
-|              20|Mechanics Monumen...|
-|             126|         Esprit Park|
-|             149|Emeryville Town Hall|
-|             259|Addison St at Fou...|
-|              44|Civic Center/UN P...|
-|              66|3rd St at Townsen...|
-|             321|       5th at Folsom|
-|             318|San Carlos St at ...|
-|             296|5th St at Virgini...|
-|             239|Bancroft Way at T...|
-|             130|22nd St Caltrain ...|
-|              76|McCoppin St at Va...|
-|              39|Scott St at Golde...|
-|              17|Embarcadero BART ...|
-|             101|San Bruno Ave at ...|
-|              30|San Francisco Cal...|
-|             172|College Ave at Ta...|
-|             177|MacArthur Blvd at...|
-+----------------+--------------------+
-only showing top 20 rows
-
->> Total number of stations : 240
-Total Number of Stations: 240
-Total Number of Trips: 828
-Total Number of Trips in Original Data: 828
-[success] Total time: 112 s, completed Apr 27, 2018 11:25:24 PM
->
-```
-
 ## PageRank
 > run
 [warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
@@ -329,10 +230,9 @@ Multiple main classes detected, select one to run:
  [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
  [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
  [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
+ [5] team3.bikeshare.project.BikeShareAppPageRank
 
-Enter number: 6
+Enter number: 5
 
 [info] Running team3.bikeshare.project.BikeShareAppPageRank
 Using Spark's default log4j profile: org/apache/spark/log4j-defaults.properties
