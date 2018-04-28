@@ -7,15 +7,14 @@ import org.apache.spark.sql.functions._
 import org.apache.log4j.Logger
 import org.apache.log4j.Level
 
-
 object BikeShareAppFordGoDataset {
   def main(args: Array[String]) {
     Logger.getLogger("org").setLevel(Level.OFF)
     Logger.getLogger("akka").setLevel(Level.OFF)
     val sparkSession = SparkSession.builder.master("local").appName("Bike Share Big Graph").getOrCreate()
     sparkSession.conf.set("spark.executor.memory", "3g")
-    val df = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/FlumeData.1524840146052.tmp")
-    var newDf = df.sample(false, 0.1)
+    val newDf = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/FlumeData.1524840146052.tmp")
+    //var newDf = newDf.sample(false, 0.1)
     newDf.printSchema()
     val start_stations = newDf.selectExpr("cast(start_station_id as int) start_station_id", "start_station_name").distinct
     start_stations.show()
