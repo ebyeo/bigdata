@@ -14,7 +14,7 @@ object BigBikeGraphBikeMaintainance {
     Logger.getLogger("akka").setLevel(Level.OFF)
     val sparkSession = SparkSession.builder.master("local").appName("spark session example").getOrCreate()
     sparkSession.conf.set("spark.executor.memory", "3g")
-    val df = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/FlumeData.1524840146052.tmp")
+    val df = sparkSession.read.option("header","true").csv("hdfs://localhost:9000/flume_sink/FlumeData.1524840146052")
     val distinctValuesDF = df.select(df("bike_id")).distinct.cache()
     println("Total number of unique bikes in 2018 Jan : " + distinctValuesDF.count())
     println("Top 30 bikes out of " + distinctValuesDF.count() + " that require maintainance in 2018 January : ")
