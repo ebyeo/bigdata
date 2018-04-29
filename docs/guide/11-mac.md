@@ -4,7 +4,7 @@
 * Install Scala >> https://www.scala-lang.org/download/
 * Install SBT >> https://www.scala-sbt.org/1.0/docs/Setup.html
 * Install Apache Spark >> https://spark.apache.org/downloads.html
-* [Install Hadoop and Flume](#Install Hadoop and Flume)
+* [Install Hadoop and Flume](#install-hadoop-and-flume)
 
 ## Install Hadoop and Flume
 For the purpose of consuming large amount of data we decided to use Flume to write to HDFS
