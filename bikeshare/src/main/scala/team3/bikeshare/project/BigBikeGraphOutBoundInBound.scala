@@ -43,7 +43,7 @@ object BigBikeGraphOutBoundInBound {
     println("Bike stations with the most inbound traffic:")
     top_inbound.take(10).foreach(x => println(x._2._2 + " has " + x._2._1 + " in degrees."))
     val top_inbound_file = "top_inbound"
-    // top_inbound.coalesce(1).map(tuple => "%s,%s".format(tuple._2._2, tuple._2._1)).saveAsTextFile(top_inbound_file)
+    top_inbound.coalesce(1).map(tuple => "%s,%s".format(tuple._2._2, tuple._2._1)).saveAsTextFile(top_inbound_file)
 
     // Bike stations with the most outbound traffic
     val top_outbound = station_graph

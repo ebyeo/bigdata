@@ -9,6 +9,8 @@ In a nutshell, the input and output of the system are:
 * source data is provided by Ford GoBike at their [website](https://www.fordgobike.com/) via this [link](https://www.fordgobike.com/system-data)
 * visualisation is hosted on carto.com at this [link](https://e0015358.carto.com/builder/cb097103-cd70-4d53-a749-627bad91fa95/embed).
 
+See here for [essential information](./docs/guide/30-essential.md) about the setup.
+
 ## System Overview
 For the demo, the system is put together in a VirtualBox VM with Ubuntu OS. The system covers 
 * ingestion of the data using Apache Flume
@@ -58,25 +60,15 @@ Please install the components in the order presented in this guide:
 
 Refer to [these instructions](./docs/guide/11-mac.md) for installation on a OS X.
 
-## Results
+## Applications
 
-PageRank measures the importance of each vertex in a graph, by determining which vertexes have the most edges with other vertexes. In our example, we can use PageRank to determine which bike stations are the most important by measuring which stations have the most connections to other stations.
+The demo comprises 5 applications. Follow [these instructions](./docs/guide/20-start-server.md) to run the applications.
+* [Bike Maintenance](./docs/results/01-bike-maintenance.md)
+* [Degree Ratio](./docs/results/02-degree-ratio.md)
+* [Out / In Bound](./docs/results/03-out-in-bound.md)
+* [Dataset Description](./docs/results/04-dataset.md)
+* [PageRange](./docs/results/05-pagerank.md)
 
-PageRank for 201801_fordgobike_tripdata
-```
-Processing 94802 datapoints
-Telegraph Ave at 19th St has a pagerank of 216
-Frank H Ogawa Plaza has a pagerank of 215
-San Jose Diridon Station has a pagerank of 190
-19th Street BART Station has a pagerank of 183
-Grand Ave at Webster St has a pagerank of 183
-San Fernando St at 4th St has a pagerank of 179
-Telegraph Ave at 23rd St has a pagerank of 178
-Bay Pl at Vernon St has a pagerank of 175
-West Oakland BART Station has a pagerank of 170
-MacArthur BART Station has a pagerank of 160
-[success] Total time: 5176 s, completed 14 Apr 2018, 1:03:12 AM
-```
 ## References
 ### GraphX Resources
 * <http://www.sparktutorials.net/Analyzing+Flight+Data%3A+A+Gentle+Introduction+to+GraphX+in+Spark>
