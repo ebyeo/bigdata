@@ -26,7 +26,7 @@ cd ~/bikeshare/bin
 ```
 cp ~/bikeshare/data/sample/201801_fordgobike_tripdata_001.csv ~/bikeshare/data/bike
 ```
-After the file is processed by Flume, it is renamed to 201801_fordgobike_tripdata_001.csv.COMPLETED
+   After the file is processed by Flume, it is renamed to 201801_fordgobike_tripdata_001.csv.COMPLETED
 
 5. Start application
 ```
@@ -34,7 +34,7 @@ cd ~/projects/bigdata/bikeshare
 sbt
 >run
 ```
-You should see this menu.
+   You should see this menu.
 ```
 [warn] Multiple main classes detected.  Run 'show discoveredMainClasses' to see the list
 
@@ -44,12 +44,11 @@ Multiple main classes detected, select one to run:
  [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
  [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
  [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
+ [5] team3.bikeshare.project.BikeShareAppPageRank
 
 Enter number: 
 ```
-Type the number of the program to run.
+   Type the number of the program to run.
 
 6. Type _Exit_ to return
 
@@ -57,7 +56,7 @@ Type the number of the program to run.
 ```
 ps -ef |grep flume
 ```
-Note the process ID and issue kill -9 <process id> to fill the Flume process
+   Note the process ID and issue kill -9 <process id> to fill the Flume process
 
 8. Stop Hadoop
 ```
