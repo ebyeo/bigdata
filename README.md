@@ -36,14 +36,6 @@ Apache Flume | 1.8.0 | http://flume.apache.org | To ingest the trip logs and dep
 Apache Spark | 2.3.0 | http://spark.apache.org | To process the file and use GraphX for the graph analysis
 SBT	| 1.1.1 | https://www.scala-sbt.org | Build tool for Scala
 
-Other components installed but not use in the demo:
-
-Component | Version | Website | Purpose
---------- | ------- | ------- | -------
-HBase | 1.2.6 | https://hbase.apache.org | A distributed and scalable data store
-Kafka | 1.0.1 | http://kafka.apache.org | For publishing and subscribing to messages 
-Zeppelin | 0.7.3 | https://zeppelin.apache.org | A web-based notebook for interactive data analytics with Scala and more
-
 ## Installation
 Please install the components in the order presented in this guide:
 
