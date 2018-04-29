@@ -17,7 +17,7 @@ To start HDFS on OS X:
 * Enable Remote Login by navigating the following path :“System Preferences” -> “Sharing”. Check “Remote Login”
 * run "/usr/local/Cellar/hadoop/3.0.0/sbin/start-dfs.sh"
 
-Sample Flume config for Bikeshare is found in https://github.com/e0015358/big-graph-data/blob/master/flume_config/bikeshare.conf
+Sample Flume config for Bikeshare is found in https://github.com/ebyeo/bigdata/tree/master/app_template/conf/bikeshare.conf
 
 Place the sample config in /usr/local/Cellar/flume/1.6.0/libexec/conf/
 
