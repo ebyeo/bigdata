@@ -67,7 +67,7 @@ The demo comprises 5 applications. Follow [these instructions](./docs/guide/20-s
 * [Degree Ratio](./docs/results/02-degree-ratio.md)
 * [Out / In Bound](./docs/results/03-out-in-bound.md)
 * [Dataset Description](./docs/results/04-dataset.md)
-* [PageRange](./docs/results/05-pagerank.md)
+* [PageRank](./docs/results/05-pagerank.md)
 
 ## References
 ### GraphX Resources
