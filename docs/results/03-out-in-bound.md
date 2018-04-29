@@ -1,6 +1,6 @@
 # Out Bound / In Bound
 
-This application convert the file into graph, computes the in and out degree of each vertex and stores the lists to HDFS.
+This application converts the file into graph, computes the in and out degree of each vertex and stores the lists to HDFS.
 
 ```
 > run
