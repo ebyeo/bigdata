@@ -69,6 +69,8 @@ The demo comprises 5 applications. Follow [these instructions](./docs/guide/20-s
 * [Dataset Description](./docs/results/04-dataset.md)
 * [PageRank](./docs/results/05-pagerank.md)
 
+The output from degree ratio, out / in bound and pagerank is uploaded to Carto for further analysis.
+
 ## References
 ### GraphX Resources
 * <http://www.sparktutorials.net/Analyzing+Flight+Data%3A+A+Gentle+Introduction+to+GraphX+in+Spark>
