@@ -42,8 +42,7 @@ Multiple main classes detected, select one to run:
  [2] team3.bikeshare.project.BigBikeGraphDegreesRatio
  [3] team3.bikeshare.project.BigBikeGraphOutBoundInBound
  [4] team3.bikeshare.project.BikeShareAppFordGoDataset
- [5] team3.bikeshare.project.BikeShareAppHDFS
- [6] team3.bikeshare.project.BikeShareAppPageRank
+ [5] team3.bikeshare.project.BikeShareAppPageRank
 
 Enter number: 
 
