@@ -3,7 +3,7 @@
 ## Introduction
 This guide provides instruction to set up the Ford GoBike analytic application which is a big data platform designed to scale as the bike sharing scheme expands to cover more area across the states.
 
-Here we attempt to use GraphX to model the BikeShare data from [Ford GoBike](http://www.fordgobike.com/system-data)
+Here we attempt to use GraphX to model the BikeShare data from [Ford GoBike](https://www.fordgobike.com/system-data)
 
 In a nutshell, the input and output of the system are:
 * source data is provided by Ford GoBike at their [website](https://www.fordgobike.com/) via this [link](https://www.fordgobike.com/system-data)
